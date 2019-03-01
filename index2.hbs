@@ -1,0 +1,21 @@
+<a href="/" target="_blank">Home</a> |
+</section>
+<section class="get">
+    <h3>Get Cattle Data</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>Tag: {{ this.tag }}</div>
+                <div>Gender: {{ this.gender }}</div>
+                <div>Sire: {{ this.sire }}</div>
+                <div>Breed: {{ this.breed }}</div>
+                <div>D.O.B.: {{ this.dob }}</div>
+                <div>Calving Date: {{ this.due }}</div>
+                <div>Purchase Price: {{ this.pur }}</div>
+                <div>Sale Price: {{ this.sal }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>

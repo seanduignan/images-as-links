@@ -1,0 +1,261 @@
+
+<h1 style="background-color:Lightgrey;">FARM MANAGEMENT SYSTEM</h1>
+
+</div>
+<a href="/" target="_blank">Home</a> |
+<a href="/get-data" target="_blank">Cattle</a> |
+<a href="/get-feeddata" target="_blank">Feed</a> |
+<a href="/get-vetdata" target="_blank">Vet Bills</a> |
+<a href="/get-supplydata" target="_blank">Supplies</a>
+</div>
+
+<br>
+<br>
+<a href="/get-data" >
+<img style="width:180px;height:130px;margin-left:30px;box-shadow: 10px 10px 5px grey;" src="/images/cow.jpg"></a>
+<img style="width:180px;height:130px;margin-left:110px;box-shadow: 10px 10px 5px grey;" src="/images/vet.png">
+<img style="width:180px;height:130px;margin-left:100px;box-shadow: 10px 10px 5px grey;" src="/images/hay.png">
+<img style="width:180px;height:130px;margin-left:120px;box-shadow: 10px 10px 5px grey;" src="/images/tractor.png">
+<br>
+
+<section class="insert">
+    <h3>Animals</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="tag">Tag</label>
+            <input type="text" id="tag" name="tag">
+        </div>
+        <div class="input">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender">
+        </div>
+        <div class="input">
+            <label for="sire">Sire</label>
+            <input type="text" id="sire" name="sire">
+        </div>
+        <div class="input">
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed">
+        </div>
+        <div class="input">
+            <label for="dob">D.O.B.</label>
+            <input type="text" id="dob" name="dob">
+        </div>
+        <div class="input">
+            <label for="due">Calving Date</label>
+            <input type="date" id="due" name="due">
+        </div>
+        <div class="input">
+            <label for="pur">Purchase Price</label>
+            <input type="text" id="pur" name="pur">
+        </div>
+        <div class="input">
+            <label for="sal">Sale Price</label>
+            <input type="text" id="sal" name="sal">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+
+
+  </section>
+      <section class="insert">
+          <h3>Vet Bills</h3>
+          <form action="/insertvet" method="post">
+              <div class="input">
+                  <label for="reason">Reason</label>
+                  <input type="text" id="reason" name="reason">
+              </div>
+              <div class="input">
+                  <label for="cost">Cost</label>
+                  <input type="text" id="cost" name="cost">
+              </div>
+              <div class="input">
+                  <label for="vetname">Vet Name</label>
+                  <input type="text" id="vetname" name="vetname">
+              </div>
+              <div class="input">
+                 <label for="date">Date</label>
+                  <input type="date" id="date" name="date">
+              </div>
+              <div class="input">
+                  <label for="tag1">Tag</label>
+                  <input type="text" id="tag1" name="tag1">
+              </div>
+              <button type="submit">INSERT</button>
+          </form>
+  </section>
+
+
+</section>
+    <section class="insert">
+        <h3>Animal Feed</h3>
+        <form action="/insertfeed" method="post">
+            <div class="input">
+                <label for="qty">Quantity</label>
+                <input type="text" id="qty" name="qty">
+            </div>
+            <div class="input">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price">
+            </div>
+            <div class="input">
+                <label for="supplier">Supplier</label>
+                <input type="text" id="supplier" name="supplier">
+            </div>
+            <div class="input">
+                <label for="type">Type</label>
+                <input type="text" id="type" name="type">
+            </div>
+            <div class="input">
+                <label for="date1">Date</label>
+                <input type="date" id="date1" name="date1">
+            </div>
+            <button type="submit">INSERT</button>
+        </form>
+</section>
+
+
+</section>
+    <section class="insert">
+        <h3>Machinery/Supplies</h3>
+        <form action="/insertsupply" method="post">
+            <div class="input">
+                <label for="sup">Supplies</label>
+                <input type="text" id="sup" name="sup">
+            </div>
+            <div class="input">
+                <label for="price2">Price</label>
+                <input type="text" id="price2" name="price2">
+            </div>
+            <div class="input">
+                <label for="date2">Date</label>
+                <input type="date" id="date2" name="date2">
+            </div>
+            <button type="submit">INSERT</button>
+        </form>
+</section>
+
+
+
+
+
+</section>
+<section class="get">
+    <h3>Get Vet Data</h3>
+    <a href="/get-vetdata">LOAD DATA</a>
+    <div>
+        {{# each units }}
+            <article class="unit">
+                <div>Tag: {{ this.tag1 }}</div>
+                <div>Reason: {{ this.reason }}</div>
+                <div>Vet Name: {{ this.vetname }}</div>
+                <div>Cost: {{ this.cost }}</div>
+                <div>Date: {{ this.date }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+</section>
+<section class="get">
+    <h3>Get Feed Data</h3>
+    <a href="/get-feeddata">LOAD DATA</a>
+    <div>
+        {{# each amounts }}
+            <article class="amount">
+                <div>Quantity: {{ this.qty }}</div>
+                <div>Price: {{ this.price }}</div>
+                <div>Supplier: {{ this.supplier }}</div>
+                <div>Type: {{ this.type }}</div>
+                <div>Date: {{ this.date1 }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+</section>
+<section class="get">
+    <h3>Get Supply Data</h3>
+    <a href="/get-supplydata">LOAD DATA</a>
+    <div>
+        {{# each objects }}
+            <article class="object">
+                <div>Supplies: {{ this.sup }}</div>
+                <div>Price: {{ this.price2 }}</div>
+                <div>Date: {{ this.date2 }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+</section>
+<section class="get">
+    <h3>Get Profit Margins</h3>
+    <a href="/get-profitdata">LOAD DATA</a>
+    <div>
+        {{# each profits }}
+            <article class="profit">
+                <div>Profit: {{ this.totalCost }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+
+<section class="update">
+    <h3>Update Cattle</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="tag">Tag</label>
+            <input type="text" id="tag" name="tag">
+        </div>
+        <div class="input">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender">
+        </div>
+        <div class="input">
+            <label for="sire">Sire</label>
+            <input type="text" id="sire" name="sire">
+        </div>
+        <div class="input">
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed">
+        </div>
+        <div class="input">
+            <label for="dob">D.O.B.</label>
+            <input type="text" id="dob" name="dob">
+        </div>
+        <div class="input">
+            <label for="due">Calving Date</label>
+            <input type="text" id="due" name="due">
+        </div>
+        <div class="input">
+            <label for="pur">Purchase Price</label>
+            <input type="text" id="pur" name="pur">
+        </div>
+        <div class="input">
+            <label for="sal">Sale Price</label>
+            <input type="text" id="sal" name="sal">
+        </div>
+        <button type="submit">UPDATE</button>
+    </form>
+
+</section>
+</section>
+<section class="delete">
+    <h3>Delete Data</h3>
+    <form action="/delete" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <button type="submit">DELETE</button>
+    </form>
+</section>
